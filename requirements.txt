@@ -1,0 +1,12 @@
+streamlit
+pandas
+PyMuPDF
+matplotlib
+python-docx
+openai
+tenacity
+python-dotenv
+sentence-transformers
+torch
+transformers
+openpyxl
