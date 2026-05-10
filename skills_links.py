@@ -115,3 +115,4 @@ def generate_learning_plan(missing_skills, skill_links_data):
         
     return skill_plans
 
+
