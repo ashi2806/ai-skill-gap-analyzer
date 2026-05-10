@@ -47,3 +47,4 @@ Resume text:
         return json.loads(content)
     except:
         return {"education": "", "projects": "", "experience": ""}
+
