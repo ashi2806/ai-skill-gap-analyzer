@@ -257,3 +257,4 @@ def ai_get_top_matches(resume_text, roles_df):
 
     return pd.DataFrame(scores).sort_values("Match %", ascending=False).head(5)
 
+
