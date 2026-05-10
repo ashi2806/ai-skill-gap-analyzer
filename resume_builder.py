@@ -305,3 +305,4 @@ def ai_build_template_resume(basic_info, final_skills):
     cells2[1].paragraphs[0].add_run("Graduation Year").alignment = WD_ALIGN_PARAGRAPH.RIGHT
     
     return doc
+
