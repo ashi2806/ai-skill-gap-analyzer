@@ -5,7 +5,7 @@
 
 **A Final Year Project**
 
-[![Live Demo](https://ai-skill-gap-analyzer-njnvh23mz9pmwsxh3rofuq.streamlit.app)
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-FF4B4B?style=for-the-badge)](https://ai-skill-gap-analyzer-njnvh23mz9pmwsxh3rofuq.streamlit.app)
 
 </div>
 
