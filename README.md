@@ -1,5 +1,6 @@
 <div align="center">
-# AI-Driven Framework for Early Career Skill Gap Analysis and Recommendation
+
+  # AI-Driven Framework for Early Career Skill Gap Analysis and Recommendation
 
 ### *Upload your resume. Pick your dream role. Get your personalized 30-day roadmap.*
 
@@ -116,7 +117,7 @@ This project was built as a Final Year Project by a team of 3:
 | Name | GitHub |
 |---|---|
 | **Ashika** | [@Ashi2806](https://github.com/Ashi2806) |
-| **Bhuvanesh S** | [@Bhuvanesh](https://github.com/) |
+| **Bhuvanesh S** | [@Bhuvanesh1609](https://github.com/bhuvanesh1609) |
 | **Anitta V** | [@Anitta10](https://github.com/Anitta10) |
 
 ---
