@@ -4,7 +4,8 @@
 ### *Upload your resume. Pick your dream role. Get your personalized 30-day roadmap.*
 
 **A Final Year Project**
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge)](https://ai-skill-gap-analyzer-njnvh23mz9pmwsxh3rofuq.streamlit.app)
+
+[![Live Demo](https://ai-skill-gap-analyzer-njnvh23mz9pmwsxh3rofuq.streamlit.app)
 
 </div>
 
@@ -78,26 +79,26 @@ The user uploads their **resume (PDF or DOCX)**, selects a **target job role and
 
 
 ## 📁 Module Breakdown
+## 📁 Module Breakdown
 
+```
 ai-skill-gap-analyzer/
 │
-├── app.py                      # Main Streamlit app — UI, routing, tab logic
-├── config.py                   # LLM client factory (local Ollama ↔ cloud OpenAI)
-├── skill_matcher.py            # Core AI: skill extraction, match analysis,
-│                               # SBERT semantic matching, top role finder,
-│                               # project idea generator
-├── section_extractor.py        # LLM-based resume section parser
-│                               # (education, projects, experience)
-├── skills_links.py             # Excel loader + 4-week learning plan generator
-├── resume_builder.py           # AI resume enhancer + python-docx builder
-│                               # (includes clickable hyperlinks in .docx)
-├── style_utils.py              # Aurora CSS design system injection
-├── roles.csv                   # Job roles database with required skills
-│                               # (department, role, skills columns)
-├── courses_recommendation.xlsx # Learning resource database
-│                               # Sheet1: Missing_Skill → Platform, URL, Type
-│                               # quiz sheet: Skill → Quiz link
+├── app.py                      Main Streamlit app — UI, routing, tab logic
+├── config.py                   LLM client factory (local Ollama ↔ cloud OpenAI)
+├── skill_matcher.py            Core AI: skill extraction, match analysis,
+│                               SBERT semantic matching, top role finder
+├── section_extractor.py        LLM-based resume section parser
+│                               (education, projects, experience)
+├── skills_links.py             Excel loader + 4-week learning plan generator
+├── resume_builder.py           AI resume enhancer + python-docx builder
+├── style_utils.py              Aurora CSS design system injection
+├── roles.csv                   Job roles database (department, role, skills)
+├── courses_recommendation.xlsx Learning resource database
+│                               Sheet1 — Missing_Skill → Platform, URL, Type
+│                               quiz   — Skill → Quiz link
 └── requirements.txt
+```
 **Key Design Decisions:**
 
 **Dual-mode LLM** — `config.py` switches between local Ollama (free, no internet) and any OpenAI-compatible cloud API using environment variables. Zero code changes needed between environments.
