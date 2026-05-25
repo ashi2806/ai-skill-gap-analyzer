@@ -1,24 +1,14 @@
 <div align="center">
-
-<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
-<img src="https://img.shields.io/badge/OpenAI%20Compatible-412991?style=for-the-badge&logo=openai&logoColor=white"/>
-<img src="https://img.shields.io/badge/SBERT-orange?style=for-the-badge&logo=huggingface&logoColor=white"/>
-
-<br/><br/>
-
-# 🎯 AI-Driven Framework for Early Career Skill Gap Analysis and Recommendation
+# AI-Driven Framework for Early Career Skill Gap Analysis and Recommendation
 
 ### *Upload your resume. Pick your dream role. Get your personalized 30-day roadmap.*
 
-**A Final Year Project by Team [Your Team Name] — [Your College Name]**
-
-[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge)](https://your-streamlit-link-here.streamlit.app)
+**A Final Year Project**
+[![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge)](https://ai-skill-gap-analyzer-njnvh23mz9pmwsxh3rofuq.streamlit.app)
 
 </div>
 
 ---
-
 ## 📌 Table of Contents
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -67,3 +57,80 @@ The user uploads their **resume (PDF or DOCX)**, selects a **target job role and
 ## 🏗️ System Architecture
 
 <img width="1960" height="1180" alt="image" src="https://github.com/user-attachments/assets/f6b54b33-a0e3-4833-b0fb-807c3f60676e" />
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Frontend / UI** | Streamlit, Custom CSS (Aurora Glassmorphism Design System) |
+| **AI / NLP** | OpenAI-compatible LLM (local: Ollama/TinyLlama, cloud: GPT-4o-mini or similar) |
+| **Semantic Matching** | Sentence-BERT (`all-MiniLM-L6-v2`) via `sentence-transformers` |
+| **PDF Parsing** | PyMuPDF (`fitz`) — text + hyperlink extraction |
+| **DOCX Parsing & Generation** | `python-docx` |
+| **Data** | `pandas`, `openpyxl` — roles CSV + Excel course recommendations |
+| **Retry Logic** | `tenacity` — exponential backoff on LLM API calls |
+| **Config / Secrets** | `python-dotenv` |
+| **Deployment** | Streamlit Community Cloud |
+
+---
+
+
+## 📁 Module Breakdown
+
+ai-skill-gap-analyzer/
+│
+├── app.py                      # Main Streamlit app — UI, routing, tab logic
+├── config.py                   # LLM client factory (local Ollama ↔ cloud OpenAI)
+├── skill_matcher.py            # Core AI: skill extraction, match analysis,
+│                               # SBERT semantic matching, top role finder,
+│                               # project idea generator
+├── section_extractor.py        # LLM-based resume section parser
+│                               # (education, projects, experience)
+├── skills_links.py             # Excel loader + 4-week learning plan generator
+├── resume_builder.py           # AI resume enhancer + python-docx builder
+│                               # (includes clickable hyperlinks in .docx)
+├── style_utils.py              # Aurora CSS design system injection
+├── roles.csv                   # Job roles database with required skills
+│                               # (department, role, skills columns)
+├── courses_recommendation.xlsx # Learning resource database
+│                               # Sheet1: Missing_Skill → Platform, URL, Type
+│                               # quiz sheet: Skill → Quiz link
+└── requirements.txt
+**Key Design Decisions:**
+
+**Dual-mode LLM** — `config.py` switches between local Ollama (free, no internet) and any OpenAI-compatible cloud API using environment variables. Zero code changes needed between environments.
+
+**Two-pass skill matching** — Alias dictionary first (high precision for known equivalents like SQL/MySQL), then SBERT cosine similarity at 0.55 threshold (catches semantic variants). Dramatically reduces false negatives.
+
+**Embedding cache** — `@st.cache_resource` on the SBERT model and `@st.cache_data` on individual skill embeddings. The 80MB model loads once per session; embeddings are never recomputed.
+
+**Retry with backoff** — All LLM calls use `@retry(stop_after_attempt(2), wait=wait_exponential(...))` via `tenacity`. Handles transient API failures without crashing the UI.
+
+**Robust JSON parsing** — LLM responses cleaned with `re.search(r'\{.*\}', content, re.DOTALL)` before `json.loads()`, with a markdown-strip fallback. Prevents crashes from verbose LLM outputs.
+
+---
+
+---
+## 👥 Team
+
+This project was built as a Final Year Project by a team of 3:
+
+| Name | GitHub |
+|---|---|
+| **Ashika** | [@Ashi2806](https://github.com/Ashi2806) |
+| **Bhuvanesh S** | [@]() |
+| **Anitta V** | [@Anitta10](https://github.com/Anitta10) |
+
+---
+
+## ⚠️ Note on Live Demo
+
+Hosted on **Streamlit Community Cloud** free tier. The app may sleep after inactivity — click **"Yes, get this app back up!"** to wake it (~30 seconds). See [DEPLOYMENT.md](./DEPLOYMENT.md) for permanent fix options.
+
+---
+
+<div align="center">
+Made with ❤️ as a Final Year Project
+</div>
