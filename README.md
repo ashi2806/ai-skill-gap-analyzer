@@ -15,10 +15,7 @@
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
 - [Tech Stack](#-tech-stack)
-- [How It Works](#-how-it-works)
 - [Module Breakdown](#-module-breakdown)
-- [Local Setup](#-local-setup)
-- [Environment Variables](#-environment-variables)
 - [Team](#-team)
 
 ---
@@ -77,8 +74,6 @@ The user uploads their **resume (PDF or DOCX)**, selects a **target job role and
 
 ---
 
-
-## 📁 Module Breakdown
 ## 📁 Module Breakdown
 
 ```
@@ -121,17 +116,13 @@ This project was built as a Final Year Project by a team of 3:
 | Name | GitHub |
 |---|---|
 | **Ashika** | [@Ashi2806](https://github.com/Ashi2806) |
-| **Bhuvanesh S** | [@]() |
+| **Bhuvanesh S** | [@Bhuvanesh](https://github.com/) |
 | **Anitta V** | [@Anitta10](https://github.com/Anitta10) |
 
 ---
 
 ## ⚠️ Note on Live Demo
 
-Hosted on **Streamlit Community Cloud** free tier. The app may sleep after inactivity — click **"Yes, get this app back up!"** to wake it (~30 seconds). See [DEPLOYMENT.md](./DEPLOYMENT.md) for permanent fix options.
+Hosted on **Streamlit Community Cloud** free tier. The app may sleep after inactivity — click **"Yes, get this app back up!"** to wake it (~30 seconds). 
 
 ---
-
-<div align="center">
-Made with ❤️ as a Final Year Project
-</div>
